@@ -71,10 +71,13 @@ const NavBarHome = () => {
             >
               Contact Us
             </Link>
-
+            <Link
+              href="/signup"
+            >
             <button className="bg-[#007676] text-white rounded-md w-[156px] h-[50px] text-[16px] font-semibold  py-1 px-3 transition-all duration-300 ease-in-out hover:bg-[#005555] hover:shadow-lg">
               GET STARTED
             </button>
+            </Link>
           </div>
           <div className="md:hidden flex items-center">
             <button

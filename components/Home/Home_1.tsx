@@ -8,7 +8,7 @@ import coder3 from "@/public/coders photos/coder3.jpg";
 
 const Home = () => {
   return (
-    <section className="mt-[10%]">
+    <section className="mt-[10%] ">
       <div className="w-[92%] container mx-auto flex flex-col lg:flex-row justify-between flex-wrap hero-section">
         <div className="w-full lg:w-[660px] mb-10 lg:mb-0">
           <div className="text-[#094546] text-3xl lg:text-5xl leading-[40px] lg:leading-[60px]">

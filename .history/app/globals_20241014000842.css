@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  /* --foreground: #171717; */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --background: #0a0a0a; */
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+/* @media (max-width: 1313px) and (min-width: 1026px) {
+  .flex-wrap {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  iframe {
+    width: 100%;
+    max-width: 360px;  
+    height: auto;
+  }
+}
+
+@media (max-width: 1025px) {
+  .flex-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  iframe {
+    width: 90%; Reduce the iframe size 
+    max-width: 360px;
+  } */
+/* } */

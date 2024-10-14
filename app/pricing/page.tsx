@@ -1,10 +1,10 @@
-import Pricing from '@/components/Pricing/Pricing'
 import React from 'react'
+import Pricing1 from '@/components/Pricing/Pricing'
 
-const pricing = () => {
+const Pricing = () => {
   return (
-    <Pricing />
+    <Pricing1 />
   )
 }
 
-export default pricing
+export default Pricing

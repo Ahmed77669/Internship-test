@@ -1,9 +1,9 @@
 import React from 'react'
-import Levels from '@/components/Levels/Levels'
-const levels = () => {
+import Levels1 from '@/components/Levels/Levels'
+const Levels = () => {
   return (
-    <Levels />
+    <Levels1 />
   )
 }
 
-export default levels
+export default Levels

@@ -1,9 +1,9 @@
 import React from 'react'
-import Registration from '@/components/auth/Registration'
-const registration = () => {
+import Registration1 from '@/components/auth/Registration'
+const Registration = () => {
   return (
-    <Registration />
+    <Registration1 />
   )
 }
 
-export default registration
+export default Registration

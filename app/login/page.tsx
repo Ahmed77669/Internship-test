@@ -1,10 +1,10 @@
 import React from 'react'
-import Login from '@/components/auth/Login'
+import Login1 from '@/components/auth/Login'
 
-const login = () => {
+const Login = () => {
   return (
-    <Login />
+    <Login1 />
   )
 }
 
-export default login
+export default Login

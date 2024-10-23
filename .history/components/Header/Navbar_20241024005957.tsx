@@ -4,10 +4,9 @@ import GT_logo from "@/public/gammalTech-logos/Component 6.png";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu } from "lucide-react";
-import Coder1 from "@/public/coders photos/coder1.jpg";
 import { X } from "lucide-react";
 
-export default function NavBarAuth() {
+export default function NavBarHome() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -55,37 +54,21 @@ export default function NavBarAuth() {
               Pricing
             </Link>
             <Link
-              href="#"
-              className="text-[#007676] text-[18px] font-normal flex items-center"
-            >
-              AIChallenge
-            </Link>
-            <Link
-              href="#"
-              className="text-[#007676] text-[18px] font-normal flex items-center"
-            >
-              Contests
-            </Link>
-            <Link
               href="https://www.gammal.tech/"
               className="text-[#007676] text-[18px] font-normal flex items-center"
             >
               About
             </Link>
             <Link
-              href="#"
+              href="/about"
               className="text-[#007676] text-[18px] font-normal flex items-center"
             >
-              Contact
+              Contact Us
             </Link>
             <Link href="/signup">
-              <Image
-                src={Coder1}
-                width={56}
-                height={56}
-                alt="profile image"
-                className="rounded-full w-14 h-14 object-cover"
-              />{" "}
+              <button className="bg-[#007676] text-white rounded-md w-[156px] h-[50px] text-[16px] font-semibold  py-1 px-3 transition-all duration-300 ease-in-out hover:bg-[#005555] hover:shadow-lg">
+                GET STARTED
+              </button>
             </Link>
           </div>
           <div className="md:hidden flex items-center">
@@ -99,13 +82,6 @@ export default function NavBarAuth() {
                 <Menu size={40} color="#007676" strokeWidth={2} />
               )}
             </button>
-            <Image
-              src={Coder1}
-              width={56}
-              height={56}
-              alt="profile image"
-              className="rounded-full w-14 h-14 object-cover"
-            />
           </div>
         </ul>
 
@@ -127,33 +103,19 @@ export default function NavBarAuth() {
                 Pricing
               </Link>
               <Link
-                href="#"
+                href="/about"
                 className="text-[#007676] text-lg font-semibold hover:bg-[#f0f0f0] transition duration-200 p-3 rounded-lg text-center w-full"
                 onClick={() => setIsOpen(false)}
               >
-                AI Challenge
+                About Us
               </Link>
-              <Link
-                href="#"
-                className="text-[#007676] text-lg font-semibold hover:bg-[#f0f0f0] transition duration-200 p-3 rounded-lg text-center w-full"
+
+              <button
+                className="mt-4 bg-[#007676] text-white text-lg font-semibold py-2 px-6 rounded-lg hover:bg-[#005c5c] transition duration-200"
                 onClick={() => setIsOpen(false)}
               >
-                Contests
-              </Link>
-              <Link
-                href="https://www.gammal.tech/"
-                className="text-[#007676] text-lg font-semibold hover:bg-[#f0f0f0] transition duration-200 p-3 rounded-lg text-center w-full"
-                onClick={() => setIsOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="#"
-                className="text-[#007676] text-lg font-semibold hover:bg-[#f0f0f0] transition duration-200 p-3 rounded-lg text-center w-full"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact Us
-              </Link>
+                GET STARTED
+              </button>
             </div>
           </div>
         )}
@@ -161,3 +123,5 @@ export default function NavBarAuth() {
     </div>
   );
 }
+
+// export default NavBarHome;

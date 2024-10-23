@@ -28,13 +28,13 @@ const Footer = () => {
             <div className="flex justify-between ">
               <div className="space-y-2 mr-6">
                 <Link href="/">Home</Link>
-                <Link href="https://www.gammal.tech/">About</Link>
-                <Link href="/pricing">Pricing</Link>
+                <Link href="/">About</Link>
+                <Link href="/">Pricing</Link>
               </div>
               <div className="space-y-2">
-                <Link href="#">Contact</Link>
-                <Link href="#">Terms</Link>
-                <Link href="#">Privacy Policy</Link>
+                <Link href="/">Contact</p>
+                <Link href="/">Terms</p>
+                <Link href="/">Privacy Policy</p>
               </div>
             </div>
           </div>

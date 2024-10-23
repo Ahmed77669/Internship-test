@@ -141,14 +141,14 @@ export default function NavBarAuth() {
                 Contests
               </Link>
               <Link
-                href="https://www.gammal.tech/"
+                href="/about"
                 className="text-[#007676] text-lg font-semibold hover:bg-[#f0f0f0] transition duration-200 p-3 rounded-lg text-center w-full"
                 onClick={() => setIsOpen(false)}
               >
                 About
               </Link>
               <Link
-                href="#"
+                href="/about"
                 className="text-[#007676] text-lg font-semibold hover:bg-[#f0f0f0] transition duration-200 p-3 rounded-lg text-center w-full"
                 onClick={() => setIsOpen(false)}
               >

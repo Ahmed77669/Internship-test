@@ -36,7 +36,7 @@ const HomePage = () => {
                 Practice
               </Link>
               <Link
-                href="/lessons"
+                href="/lessons/exams"
                 className="bg-white text-teal-600 px-8 py-3 rounded-full font-semibold hover:bg-teal-100 transition duration-300 inline-flex items-center"
               >
                 <PenTool className="mr-2" size={24} />

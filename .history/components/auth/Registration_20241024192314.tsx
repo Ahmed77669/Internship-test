@@ -3,14 +3,16 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
 interface RegistrationFormData {
-
+  firstName: string;
+  lastName: string;
   age: string;
   phoneNumber: string;
   country: string;
   state: string;
   city: string;
   university: string;
-
+  password: string;
+  confirmPassword: string;
 }
 
 interface PasswordStrength {
@@ -20,12 +22,16 @@ interface PasswordStrength {
 
 export default function RegistrationPage() {
   const [formData, setFormData] = useState<RegistrationFormData>({
+    firstName: "",
+    lastName: "",
     age: "",
     phoneNumber: "",
     country: "",
     state: "",
     city: "",
     university: "",
+    password: "",
+    confirmPassword: "",
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -52,10 +58,23 @@ export default function RegistrationPage() {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
+
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords don't match");
+      setIsLoading(false);
+      return;
+    }
+
+    if (passwordStrength.score < 3) {
+      setError("Please choose a stronger password");
+      setIsLoading(false);
+      return;
+    }
+
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      router.push("/Home_2");
+      router.push("/");
     } catch (err) {
       setError("An error occurred during registration. Please try again.");
     } finally {

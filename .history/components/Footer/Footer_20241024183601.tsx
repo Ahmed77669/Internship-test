@@ -24,24 +24,20 @@ const Footer = () => {
           </div>
 
           <div className="text-white flex flex-col mb-10">
-  <p className="font-semibold mb-5">1. Featured links</p>
-  <div className="flex justify-between">
-    {/* First column of links */}
-    <div className="flex flex-col space-y-2 mr-6">
-      <Link href="/">Home</Link>
-      <Link href="https://www.gammal.tech/">About</Link>
-      <Link href="/pricing">Pricing</Link>
-    </div>
-    
-    {/* Second column of links */}
-    <div className="flex flex-col space-y-2">
-      <Link href="#">Contact</Link>
-      <Link href="#">Terms</Link>
-      <Link href="#">Privacy Policy</Link>
-    </div>
-  </div>
-</div>
-
+            <p className="font-semibold mb-5">1. Featured links</p>
+            <div className="flex flex-col justify-between ">
+              <div className="space-y-2 mr-6">
+                <Link href="/">Home</Link>
+                <Link href="https://www.gammal.tech/">About</Link>
+                <Link href="/pricing">Pricing</Link>
+              </div>
+              <div className="space-y-2">
+                <Link href="#">Contact</Link>
+                <Link href="#">Terms</Link>
+                <Link href="#">Privacy Policy</Link>
+              </div>
+            </div>
+          </div>
 
           <div>
             <p className="text-white font-semibold mb-8">2. Connect with us</p>

@@ -3,14 +3,16 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
 interface RegistrationFormData {
-
+  firstName: string;
+  lastName: string;
   age: string;
   phoneNumber: string;
   country: string;
   state: string;
   city: string;
   university: string;
-
+  password: string;
+  confirmPassword: string;
 }
 
 interface PasswordStrength {
@@ -20,12 +22,16 @@ interface PasswordStrength {
 
 export default function RegistrationPage() {
   const [formData, setFormData] = useState<RegistrationFormData>({
+    firstName: "",
+    lastName: "",
     age: "",
     phoneNumber: "",
     country: "",
     state: "",
     city: "",
     university: "",
+    password: "",
+    confirmPassword: "",
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -45,17 +51,56 @@ export default function RegistrationPage() {
       [name]: value,
     }));
 
+    if (name === "password") {
+      checkPasswordStrength(value);
+    }
   };
 
+  const checkPasswordStrength = (password: string) => {
+    let score = 0;
+    let feedback = "";
+
+    if (password.length < 8) {
+      feedback = "Password is too short";
+    } else {
+      score += 1;
+    }
+
+    if (/[A-Z]/.test(password)) score += 1;
+    if (/[a-z]/.test(password)) score += 1;
+    if (/[0-9]/.test(password)) score += 1;
+    if (/[^A-Za-z0-9]/.test(password)) score += 1;
+
+    if (score === 5) feedback = "Very strong password";
+    else if (score === 4) feedback = "Strong password";
+    else if (score === 3) feedback = "Moderate password";
+    else if (score === 2) feedback = "Weak password";
+    else feedback = "Very weak password";
+
+    setPasswordStrength({ score, feedback });
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
+
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords don't match");
+      setIsLoading(false);
+      return;
+    }
+
+    if (passwordStrength.score < 3) {
+      setError("Please choose a stronger password");
+      setIsLoading(false);
+      return;
+    }
+
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      router.push("/Home_2");
+      router.push("/");
     } catch (err) {
       setError("An error occurred during registration. Please try again.");
     } finally {
@@ -73,7 +118,7 @@ export default function RegistrationPage() {
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm space-y-4">
-            {/* <div>
+            <div>
               <label
                 htmlFor="firstName"
                 className="block text-sm font-medium text-teal-700 mb-1"
@@ -108,7 +153,7 @@ export default function RegistrationPage() {
                 value={formData.lastName}
                 onChange={handleChange}
               />
-            </div> */}
+            </div>
             <div>
               <label
                 htmlFor="age"
@@ -310,4 +355,3 @@ export default function RegistrationPage() {
     </div>
   );
 }
-

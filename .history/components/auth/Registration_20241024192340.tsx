@@ -3,14 +3,16 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 
 interface RegistrationFormData {
-
+  firstName: string;
+  lastName: string;
   age: string;
   phoneNumber: string;
   country: string;
   state: string;
   city: string;
   university: string;
-
+  password: string;
+  confirmPassword: string;
 }
 
 interface PasswordStrength {
@@ -20,12 +22,16 @@ interface PasswordStrength {
 
 export default function RegistrationPage() {
   const [formData, setFormData] = useState<RegistrationFormData>({
+    firstName: "",
+    lastName: "",
     age: "",
     phoneNumber: "",
     country: "",
     state: "",
     city: "",
     university: "",
+    password: "",
+    confirmPassword: "",
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);

@@ -226,17 +226,21 @@ export default function NavBarAuth() {
         {isOpen && (
           <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg z-20">
             <div className="py-1">
-              <Link href="/profile" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                <User className="mr-2 h-4 w-4" />
-                <span>Profile</span>
+              <Link href="/profile">
+                <a className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  <User className="mr-2 h-4 w-4" />
+                  <span>Profile</span>
+                </a>
               </Link>
-              <Link href="/certificate" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                <Award className="mr-2 h-4 w-4" />
-                <span>Certificate</span>
+              <Link href="/certificate">
+                <a className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  <Award className="mr-2 h-4 w-4" />
+                  <span>Certificate</span>
+                </a>
               </Link>
               <button
                 onClick={handleLogout}
-                className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
+                className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               >
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Log out</span>
